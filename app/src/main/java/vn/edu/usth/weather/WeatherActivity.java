@@ -28,24 +28,20 @@ public class WeatherActivity extends AppCompatActivity {
 
             LayoutParams LayoutParamsview = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
-            //Creating textview .
-            TextView SampleTextView1 = new TextView(this);
-            TextView SampleTextView2 = new TextView(this);
+            //Creating textview
+            TextView SampleTextView = new TextView(this);
+            ImageView SampleImageView = new ImageView(this);
 
             //Adding text to TextView.
-            SampleTextView1.setText("First TextView Text");
-            SampleTextView2.setText("Second TextView Text");
-
+            SampleTextView.setText("Thursday");
+            SampleImageView.setImageResource(R.drawable.cloudy);
             //Setting TextView text Size
-            SampleTextView1.setTextSize(25);
-            SampleTextView2.setTextSize(25);
+            SampleTextView.setTextSize(25);
 
-            SampleTextView1.setLayoutParams(LayoutParamsview);
-            SampleTextView2.setLayoutParams(LayoutParamsview);
-
-            //Adding textview to linear layout using Add View function.
-            linearlayout.addView(SampleTextView1);
-            linearlayout.addView(SampleTextView2);
+            SampleTextView.setLayoutParams(LayoutParamsview);
+            SampleImageView.setLayoutParams(LayoutParamsview);
+            linearlayout.addView(SampleTextView);
+            linearlayout.addView(SampleImageView);
 
             // create fragment
             Log.i("WeatherActivity","Create Fragment");
