@@ -22,14 +22,7 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
-        rootView.setBackgroundColor(Color.parseColor("#20FF0000"));
-
-        //Creating LinearLayout.
-//        LinearLayout linearlayout = (LinearLayout)inflater.inflate(R.layout.fragment_forecast, container, false);
-
-        //Setting up LinearLayout Orientation
-//        linearlayout.setOrientation(LinearLayout.VERTICAL);
-//        linearlayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        rootView.setBackgroundColor(Color.parseColor("#dedefd"));
 
         return rootView;
     }
