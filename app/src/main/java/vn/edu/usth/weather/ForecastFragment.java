@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
+import java.util.ArrayList;
+
 public class ForecastFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
