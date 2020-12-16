@@ -1,50 +1,51 @@
 [{
-  "icon": "@drawable/_01_cloud",
+  "icon": "_01_cloud",
   "date": "Mon",
   "forecast": "Mostly Cloudy",
   "temperature": "24°C - 31°C"
-}, {
-  "icon": "@drawable/_01_cloud",
+}
+, {
+  "icon": "_03_rainy",
   "date": "Tue",
   "forecast": "Showers",
   "temperature": "24°C - 30°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_04_rainy_1",
   "date": "Wed",
   "forecast": "Rain",
   "temperature": "22°C - 27°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_03_rainy",
   "date": "Thu",
   "forecast": "Scattered Showers",
   "temperature": "22°C - 30°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_01_cloud",
   "date": "Fri",
   "forecast": "Mostly Cloudy",
   "temperature": "24°C - 31°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_38_cloudy_3",
   "date": "Sat",
   "forecast": "Partly Cloud",
   "temperature": "25°C - 28°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_08_storm",
   "date": "Sun",
   "forecast": "Thunderstorms",
   "temperature": "24°C - 27°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_08_storm",
   "date": "Mon",
   "forecast": "Scattered Thunderstorms",
   "temperature": "24°C - 26°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_04_rainy_1",
   "date": "Wed",
   "forecast": "Showers",
   "temperature": "23°C - 27°C"
 }, {
-  "icon": "@drawable/_01_cloud",
+  "icon": "_08_storm",
   "date": "Wed",
   "forecast": "Scattered Thunderstorms",
   "temperature": "24°C - 30°C"

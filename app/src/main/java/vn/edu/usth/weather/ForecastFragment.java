@@ -80,7 +80,8 @@ public class ForecastFragment extends Fragment {
                 String date = itemObj.getString("date");
                 String forecast = itemObj.getString("forecast");
                 String temperature = itemObj.getString("temperature");
-                DayForecast dayForecast = new DayForecast(date, temperature, forecast);
+                String icon = itemObj.getString("icon");
+                DayForecast dayForecast = new DayForecast(date, icon, temperature, forecast);
                 viewItems.add(dayForecast);
             }
 

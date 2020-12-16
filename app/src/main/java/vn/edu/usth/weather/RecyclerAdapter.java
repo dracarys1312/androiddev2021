@@ -4,9 +4,12 @@ import vn.edu.usth.weather.model.DayForecast;
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -27,12 +30,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private TextView forecast;
         private TextView date;
         private TextView temperature;
-
+        private ImageView icon;
         public ItemViewHolder( View itemView) {
             super(itemView);
             date = (TextView) itemView.findViewById(R.id.date);
             forecast = (TextView) itemView.findViewById(R.id.forecast);
             temperature = (TextView) itemView.findViewById(R.id.temperature);
+            icon = (ImageView) itemView.findViewById(R.id.icon);
         }
     }
 
@@ -53,18 +57,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-
         int viewType = getItemViewType(i);
-
         switch (viewType) {
             case TYPE:
             default:
 
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
+
                 DayForecast dayForecast = (DayForecast) listRecyclerItem.get(i);
+                int drawableResourceId = context.getResources().getIdentifier(dayForecast.getIcon(), "drawable", context.getPackageName());
+
                 itemViewHolder.date.setText(dayForecast.getDate());
                 itemViewHolder.forecast.setText(dayForecast.getForecast());
                 itemViewHolder.temperature.setText(dayForecast.getTemperature());
+                itemViewHolder.icon.setImageResource(drawableResourceId);
 
         }
 
