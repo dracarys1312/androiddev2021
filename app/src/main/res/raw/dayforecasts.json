@@ -1,0 +1,52 @@
+[{
+  "icon": "@drawable/_01_cloud",
+  "date": "Mon",
+  "forecast": "Mostly Cloudy",
+  "temperature": "24°C - 31°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Tue",
+  "forecast": "Showers",
+  "temperature": "24°C - 30°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Wed",
+  "forecast": "Rain",
+  "temperature": "22°C - 27°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Thu",
+  "forecast": "Scattered Showers",
+  "temperature": "22°C - 30°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Fri",
+  "forecast": "Mostly Cloudy",
+  "temperature": "24°C - 31°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Sat",
+  "forecast": "Partly Cloud",
+  "temperature": "25°C - 28°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Sun",
+  "forecast": "Thunderstorms",
+  "temperature": "24°C - 27°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Mon",
+  "forecast": "Scattered Thunderstorms",
+  "temperature": "24°C - 26°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Wed",
+  "forecast": "Showers",
+  "temperature": "23°C - 27°C"
+}, {
+  "icon": "@drawable/_01_cloud",
+  "date": "Wed",
+  "forecast": "Scattered Thunderstorms",
+  "temperature": "24°C - 30°C"
+}
+]
