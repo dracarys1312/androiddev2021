@@ -45,7 +45,7 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
-        rootView.setBackgroundColor(Color.parseColor("#dedefd"));
+//        rootView.setBackgroundColor(Color.parseColor("#dedefd"));
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
 

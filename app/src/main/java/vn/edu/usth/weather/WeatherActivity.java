@@ -17,46 +17,44 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
         if (savedInstanceState == null) {
             // During initial setup, plug in the details fragment.
-            // create fragment
-            Log.i(TAG,"Create Fragment");
-            ForecastFragment forecastFragment = new ForecastFragment();
-
-            forecastFragment.setArguments(getIntent().getExtras());
-
-            getSupportFragmentManager().beginTransaction()
-                    .add(android.R.id.content, forecastFragment).commit();
         }
 
+        Log.i("WeatherAcitivity", "onCreate");
         Log.i(TAG, "onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        Log.i("WeatherAcitivity", "onStart");
         Log.i(TAG, "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i("WeatherAcitivity", "onResume");
         Log.i(TAG, "onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.i("WeatherAcitivity", "onPause");
         Log.i(TAG, "onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        Log.i("WeatherAcitivity", "onStop");
         Log.i(TAG, "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.i("WeatherAcitivity", "onDestroy");
         Log.i(TAG, "onDestroy");
     }
 }

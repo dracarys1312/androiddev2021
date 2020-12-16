@@ -5,5 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="vn.edu.usth.weather.WeatherFragment" />
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="vn.edu.usth.weather.ForecastFragment" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
