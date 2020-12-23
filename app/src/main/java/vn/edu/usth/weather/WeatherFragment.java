@@ -60,7 +60,7 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
-        rootView.setBackgroundColor(Color.parseColor("#daf9da"));
+//        rootView.setBackgroundColor(Color.parseColor("#daf9da"));
         return rootView;
     }
 }
