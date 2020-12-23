@@ -7,12 +7,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ImageView;
@@ -44,24 +47,6 @@ public class WeatherActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-
-        try {
-            AssetManager assetFiles = getAssets();
-            InputStream in = null;
-            OutputStream out = null;
-            in = assetFiles.open("samplesong.mp3");
-            out = new FileOutputStream(
-                    Environment.getExternalStorageDirectory() + "/samplesong.mp3");
-            copyAssetFiles(in, out);
-            Log.i("WeatherActivity", "copyAssetFiles");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, Uri.parse(Environment.getExternalStorageDirectory().getPath()+ "/samplesong.mp3"));
-        mediaPlayer.start();
     }
     private void addTabs(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -120,6 +105,33 @@ public class WeatherActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_weather, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_refresh:
+            {
+                Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            case R.id.action_settings:
+            {
+                Intent intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
+                return true;
+            }
+            default:
+                super.onOptionsItemSelected(item);
+        }
+        return false;
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
