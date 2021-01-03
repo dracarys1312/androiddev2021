@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -121,7 +122,7 @@ public class WeatherActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_refresh:
             {
-                refresh();
+                new task().execute();
                 Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -137,34 +138,21 @@ public class WeatherActivity extends AppCompatActivity {
         return false;
     }
 
-    private void refresh() {
-        final Handler handler = new Handler(Looper.getMainLooper()){
-            @Override
-            public void handleMessage (Message msg){
-                String content = msg.getData().getString("server_response");
-                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
+    private class task extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
             }
-        };
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e){
-                    e.printStackTrace();
-                }
-                Bundle bundle = new Bundle();
-                bundle.putString("server_response", "Refresh now!");
+            return null;
+        }
 
-                Message msg = new Message();
-                msg.setData(bundle);
-                handler.sendMessage(msg);
-            }
-        });
-        t.start();
+        @Override
+        protected void onPostExecute(Void voids){
+            Toast.makeText(getApplicationContext(), "Refresh now!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
