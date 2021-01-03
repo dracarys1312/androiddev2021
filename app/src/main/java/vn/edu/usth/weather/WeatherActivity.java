@@ -123,7 +123,6 @@ public class WeatherActivity extends AppCompatActivity {
             case R.id.action_refresh:
             {
                 new task().execute();
-                Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
                 return true;
             }
             case R.id.action_settings:
