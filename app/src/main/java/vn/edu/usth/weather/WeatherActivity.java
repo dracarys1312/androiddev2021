@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import androidx.annotation.RequiresApi;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +14,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -117,6 +121,7 @@ public class WeatherActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_refresh:
             {
+                refresh();
                 Toast.makeText(getApplicationContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -131,6 +136,37 @@ public class WeatherActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    private void refresh() {
+        final Handler handler = new Handler(Looper.getMainLooper()){
+            @Override
+            public void handleMessage (Message msg){
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        };
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "Refresh now!");
+
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+            }
+        });
+        t.start();
+    }
+
 
     @Override
     protected void onStart() {
